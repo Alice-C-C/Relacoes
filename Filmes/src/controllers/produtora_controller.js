@@ -1,5 +1,6 @@
 import Produtora from "../models/produtora_model.js";
 
+
 async function store(req, res) {
   try {
     await Produtora.create(req.body);
@@ -11,7 +12,7 @@ async function store(req, res) {
 
 async function index(req, res) {
   try {
-    const content = await Produtora.find(req.query).exec();
+    const content = await Produtora.find(req.query).populate("filmes").exec();
     res.json(content);
   } catch (error) {
     res.status(400).json(error);

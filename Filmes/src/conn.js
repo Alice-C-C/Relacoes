@@ -1,9 +1,7 @@
 import mongoose from "mongoose";
-
 const main = async() => {
     try{
-        await mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@
-        ${process.env.CLUSTER_ADRESS}/${process.env.DB_NAME}`),
+        await mongoose.connect(`mongodb+srv://alicec:aluno@cluster0.3rfam.mongodb.net/filme`),
 
         console.log("Connect by db")
 

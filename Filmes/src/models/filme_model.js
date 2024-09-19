@@ -1,16 +1,17 @@
 import conn from "../conn.js"
+
 const Schema = conn.Schema
 
 const diretorSchema = new Schema({
-    endereCompleto: {
-        type: Schema.Types.String,
+    endereco: {
+        type: Schema.Types.Mixed,
         required: true
     },
     telefones: [{
-        type: Schema.Types.String,
+        type: Schema.Types.Number,
         required: true
     }],
-    nascionalidade:{
+    nacionalidade:{
         type: Schema.Types.String
     },
     genero:{
@@ -40,3 +41,6 @@ const filmeSchema = new Schema({
     }
 })
 
+const Filme = conn.model("Filme", filmeSchema)
+
+export default Filme

@@ -6,8 +6,8 @@ const produtoraSchema = new Schema({
         type: Schema.Types.String,
         required: true
     },
-    endereCompleto: {
-        type: Schema.Types.String,
+    endereco: {
+        type: Object,
         required: true
     },
     telefones: [{
@@ -19,3 +19,7 @@ const produtoraSchema = new Schema({
         ref: "Filme"
     }]
 })
+
+const Produtora = conn.model("Produtora", produtoraSchema)
+
+export default Produtora

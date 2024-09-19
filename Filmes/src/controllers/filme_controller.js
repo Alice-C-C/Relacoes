@@ -35,10 +35,19 @@ async function update(req, res) {
     res.status(400).json(error);
   }
 }
+async function destroy (req,res) {
+    try{
+        await Filme.findByIdAndDelete(req.params.id).exec();
+        res.json();
+    }catch(error){
+        res.status(400).json(error);
+    }
+}
 
 export default {
   store,
   index,
   show,
   update,
+  destroy
 };

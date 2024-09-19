@@ -1,15 +1,15 @@
-import filme from "./routes/filme-route.js";
-import produtora from "./routes/produtora-route.js";
+import filme from "./routers/filme_router.js";
+import produtora from "./routers/produtora_router.js";
 import e from "express";
-import "dotenv/config";
 
 const app = e();
-
+const port =4000 
+console.log(port)
 app.use(e.json())
 
 app.use("/filmes", filme);
 app.use("/produtoras", produtora)
 
-app.listen(process.env.API_PORT, () => {
-    console.log(`Server running in port ${process.env.API_PORT}`)
+app.listen(port, () => {
+    console.log(`Server running in port ${port}`)
 })
