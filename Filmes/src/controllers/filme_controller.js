@@ -2,17 +2,18 @@ import Filme from "../models/filme_model.js";
 
 async function store(req, res) {
   try {
+
     await Filme.create(req.body);
     res.json();
   } catch (error) {
-    res.status(400).json(error);
+    res.status(400).send(error);
   }
 }
 
 async function index(req, res) {
   try {
-    const content = await Filme.find(req.query).exec();
-    res.json(content);
+    await Filme.find(req.query).exec();
+    res.json();
   } catch (error) {
     res.status(400).json(error);
   }
@@ -20,8 +21,8 @@ async function index(req, res) {
 
 async function show(req, res) {
   try {
-    const content = await Filme.findById(req.params.id).exec();
-    res.json(content);
+     await Filme.findById(req.params.id).exec();
+    res.json();
   } catch (error) {
     res.status(400).json(error);
   }

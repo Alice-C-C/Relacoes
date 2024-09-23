@@ -27,12 +27,14 @@ const filmeSchema = new Schema({
         required: true
     },
     ano: {
-        type: Schema.Types.Number,
+        type: Schema.Types.Date,
         required: true
     },
     genero: {
         type: Schema.Types.String,
-        required: true
+        enum:["TERRO", "ROMANCE", "COMÉDIA"],
+        required: true,
+        dafault: "COMÉDIA"
     },
     diretor: diretorSchema,
     produtora:{

@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "git": "git add . && git commit -m 'update' && git push"
+    "git": "git add . && git commit -m 'update' && git push",
+    "dev":"nodemon src/app.js",
+    "start": "node src/app.js"
   },
   "keywords": [],
   "author": "",

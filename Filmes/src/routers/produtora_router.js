@@ -4,10 +4,10 @@ import cep_endereco from "../midllewares/cep_endereco.js"
 
 const router = e.Router()
 
-router.post("/", cep_endereco, ProdutoraController.store)
-router.get("/", ProdutoraController.index)
-router.get("/:id", ProdutoraController.show)
-router.put("/:id", ProdutoraController.update)
-router.delete("/:id", ProdutoraController.destroy)
+router.post("/", /*Criar uma produtora*/ cep_endereco, ProdutoraController.store)
+router.get("/", /*Listar todas as produtoras*/ProdutoraController.index)
+router.get("/:id",/*Listar uma produtora*/ ProdutoraController.show)
+router.put("/:id", /*Alterar uma produtora*/ProdutoraController.update)
+router.delete("/:id", /*Deletar uma produtora*/ProdutoraController.destroy)
 
 export default router
