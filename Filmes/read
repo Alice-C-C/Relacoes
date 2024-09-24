@@ -1,0 +1,3 @@
+Exercicio usando a autentificação do usuario e criptografa a senha, uso do .env,
+usa uniq: true para ter somente um usuario com aquilo
+usa signup e login no controller
